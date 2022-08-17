@@ -6,24 +6,24 @@ public class EnemyMovement : MonoBehaviour
 {
     public float moveSpeed = 4f;
 
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
 
-    Transform target;
+    public Transform player;
     Vector2 moveDirection;
 
     private void Awake(){
-        rb = GetComponent<Rigidbody2D>();
+        rb = this.GetComponent<Rigidbody2D>();
     }
 
     private void Start(){
-        target = GameObject.Find("Player").transform; // returns Transform of Player
+        //target = GameObject.Find("Player").transform; // returns Transform of Player
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(target){
-            Vector3 direction = (target.position - transform.position).normalized;
+        if(player){
+            Vector3 direction = (player.position - transform.position).normalized;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             rb.rotation = angle;
             moveDirection = direction;
@@ -33,7 +33,7 @@ public class EnemyMovement : MonoBehaviour
 
     void FixedUpdate(){
         // rb.MovePosition();
-        if(target){
+        if(player){
             rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
         }
     }
