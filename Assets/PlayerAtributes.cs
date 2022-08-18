@@ -5,20 +5,20 @@ using UnityEngine;
 public class PlayerAtributes : MonoBehaviour
 {
     private bool _isAlive = true;
-    private int _maxHealth = 3;
-    private int _currentHealth;
+    private float _maxHealth = 3;
+    private float _currentHealth;
 
     public bool IsAlive {
         get => _isAlive;
         set => _isAlive = value;
     }
 
-    public int MaxHealth {
+    public float MaxHealth {
         get=> _maxHealth;
         set => _maxHealth = value;
     }
 
-    public int CurrentHealth {
+    public float CurrentHealth {
         get=> _currentHealth;
         set => _currentHealth = value;
     }
