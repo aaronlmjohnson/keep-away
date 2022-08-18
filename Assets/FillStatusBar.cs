@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class FillStatusBar : MonoBehaviour
 {
     public PlayerAtributes playerAttributes;
-    public Image fillImage;
-    private Slider slider;
+    public Slider slider;
+
     // Start is called before the first frame update
     void Start()
     {
-        slider = GetComponent<Slider>();
+        //bar = GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -19,5 +19,6 @@ public class FillStatusBar : MonoBehaviour
     {
         float fillValue = playerAttributes.CurrentHealth / playerAttributes.MaxHealth;
         slider.value = fillValue;
+        Debug.Log(slider.value);
     }
 }

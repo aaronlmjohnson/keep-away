@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
+    //public StatusBar healthBar;
 
     //public Rigidbody2D rb;
 
     Vector2 move;
-    
+    void Start(){
+        //healthBar = GetComponent<Slider>();
+    }
 
     // Update is called once per frame
     void Update()
