@@ -9,18 +9,20 @@ public class PlayerCollision : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col){
         if(col.gameObject.tag == "Enemy"){
-            KillPlayer();
+            paScript.TakeDamage(1);
         }
     }
 
     void KillPlayer(){
         Destroy(this.gameObject);
-        paScript.IsAlive = false;
         RestartGame();
-
     }
 
     void RestartGame(){
        SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
+    }
+
+    void Update(){
+        if(!paScript.IsAlive) KillPlayer();
     }
 }
