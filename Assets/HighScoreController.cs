@@ -16,7 +16,6 @@ public class HighScoreController : MonoBehaviour
     void Start()
     {
         _highScoreText = GetComponent<TextMeshProUGUI>();
-        Debug.Log(highScoreSeconds);
         if(highScoreSeconds > 0)
             _highScoreText.text = $"Best:{script.SecondsToTimerString(highScoreSeconds)}";
     }
